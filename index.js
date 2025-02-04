@@ -27,15 +27,17 @@ document.addEventListener("DOMContentLoaded", function () {
     // 🚨 Generate certificate content dynamically
     certificateContent.innerHTML = `
       <h1>Certificate of Achievement</h1>
-      <h4>The is to certify that</h4>
-      <h3>${studentName}</h3>
-      <h4>Has almost completed the</h4>
-       <h3>${courseName}</h3>
-       <h4>With legendary perseverance and world-class bad-assery for never giving up</h4>
-       <img>
-       <h3>${personalMessage}</h3>
+      <p>The is to certify that</p>
+      <h2>${studentName}</h2>
+      <p>Has almost completed the</p>
+       <h2>${courseName}</h2>
+       <p>With legendary perseverance and world-class bad-assery for never giving up</p>
+       <img id="image" src="logo.png">
+       <h2>${personalMessage}</h2>
     `;
 
+    const imageEl = document.getElementById("image");
+    imageEl.style.width = "70%";
     //  Display the modal
     modal.style.display = "block";
 
@@ -45,6 +47,9 @@ document.addEventListener("DOMContentLoaded", function () {
     if (courseNameInput) courseNameInput.value = "";
   });
 
+  closeModal.style.cursor = "pointer";
   //  🚨 Close the modal when the close button is clicked
-  //closeModal.addEventListener("click", function () {});
+  closeModal.addEventListener("click", function () {
+    modal.style.display = "none";
+  });
 });

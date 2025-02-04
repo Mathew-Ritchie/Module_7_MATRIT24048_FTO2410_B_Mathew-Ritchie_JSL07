@@ -1,5 +1,5 @@
 body {
-    font-family: 'Raleway', serif;
+  font-family: "Raleway", serif;
   text-align: center;
   background-color: #f0f0f0;
   margin: 0;
@@ -42,29 +42,31 @@ button:hover {
 /* Certificate Modal */
 
 .modal {
-    max-width: 800px;
-    margin: 0 auto; /* Center horizontally */
-    position: fixed;
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Center both vertically and horizontally */
-    z-index: 1;
-  }
-  
-  .modal-content {
-    background-color: #fff;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    position: relative;
-    border: 3px solid #659f8f;
-  }
-  
+  max-width: 800px;
+  margin: 0 auto; /* Center horizontally */
+  position: fixed;
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Center both vertically and horizontally */
+  z-index: 1;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  position: relative;
+  border: 3px solid #659f8f;
+}
 
 .modal-content::before {
   content: "";
   position: absolute;
-  top: -2px; right: -2px; bottom: -2px; left: -2px;
+  top: -2px;
+  right: -2px;
+  bottom: -2px;
+  left: -2px;
   z-index: -1;
   background: linear-gradient(#659f8f, #5d5f5e);
   border-radius: 15px;
@@ -73,7 +75,10 @@ button:hover {
 .modal-content::after {
   content: "";
   position: absolute;
-  top: -1px; right: -1px; bottom: -1px; left: -1px;
+  top: -1px;
+  right: -1px;
+  bottom: -1px;
+  left: -1px;
   z-index: -2;
   background: #fff;
   border: 1px solid #dc7f5f;
@@ -81,7 +86,7 @@ button:hover {
 }
 
 #certificateContent {
-  font-family: 'Raleway', serif;
+  font-family: "Raleway", serif;
   color: #333;
   padding: 20px;
   background-color: #f9f9f9;
@@ -90,7 +95,9 @@ button:hover {
   margin: 20px 0;
 }
 
-h1, .modal-content h2, .modal-content p {
+h1,
+.modal-content h2,
+.modal-content p {
   color: #5d5f5e;
 }
 
@@ -100,7 +107,7 @@ h1, .modal-content h2, .modal-content p {
 
 /* Adding a fancy border to the certificate content */
 #certificateContent {
-  background: #f9f9f9 url('path/to/your/decorative-border-image.png') center/contain no-repeat;
+  background: #f9f9f9 url("path/to/your/decorative-border-image.png") center/contain no-repeat;
 }
 
 /* Adjust button styles to fit the theme */
@@ -112,4 +119,3 @@ button {
 button:hover {
   background-color: #5d5f5e;
 }
-
