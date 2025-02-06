@@ -12,8 +12,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // 🚨 Get input values
     const studentNameInput = document.getElementById("studentName");
-    const personalMessageInput = document.getElementById("personalMessage");
-    const courseNameInput = document.getElementById("courseName");
+    const personalMessageInput = document.getElementById("personalMessage"); //use getElementById to target the input by its id
+    const courseNameInput = document.getElementById("courseName"); //use getElementById to target the input by its id
 
     const studentName = studentNameInput.value;
     const personalMessage = personalMessageInput.value;
@@ -25,16 +25,35 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // 🚨 Generate certificate content dynamically
+    // All elements note directly related to the user input have been added using template literal.
+    // innerHTML is used for this and should be safe for these none input items.
     certificateContent.innerHTML = `
       <h1>Certificate of Achievement</h1>
-      <p>The is to certify that</p>
-      <h2>${studentName}</h2>
-      <p>Has almost completed the</p>
-       <h2>${courseName}</h2>
-       <p>With legendary perseverance and world-class bad-assery for never giving up</p>
-       <img id="image" src="logo.png">
-       <h2>${personalMessage}</h2>
+        <p id="student">The is to certify that</p>
+        <p id="course">Has almost completed the</p>
+        <p> With legendary perseverance and world-class bad-assery for never giving up</p>
+        <img id="image" src="logo.png">
     `;
+    // Adding certificate elelment for the student name, using textContent for displaying input name in the html. much safer than innerHTML.
+    // then inserting the name elelment right after targeted <p> which is directly before the name.
+    const certNameEl = document.createElement("h2");
+    certNameEl.textContent = `${studentName}`;
+    const certNameParentEl = document.getElementById("student");
+    certNameParentEl.parentNode.insertBefore(certNameEl, certNameParentEl.nextSibling);
+
+    //Same for Course
+    const certCourseEl = document.createElement("h2");
+    certCourseEl.textContent = `${courseName}`;
+    const certCourseParentEl = document.getElementById("course");
+    certCourseParentEl.parentNode.insertBefore(certCourseEl, certCourseParentEl.nextSibling);
+    // Same for Personal Message
+    const certPersonalMsgEl = document.createElement("h2");
+    certPersonalMsgEl.textContent = `${courseName}`;
+    const certPersonalMsgParentEl = document.getElementById("image");
+    certPersonalMsgParentEl.parentNode.insertBefore(
+      certPersonalMsgEl,
+      certPersonalMsgParentEl.nextSibling
+    );
 
     const imageEl = document.getElementById("image");
     imageEl.style.width = "70%";
